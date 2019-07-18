@@ -1,6 +1,5 @@
-<p>When two methods have the same implementation, either it was a mistake - something else was intended - or the duplication was intentional, but may
-be confusing to maintainers. In the latter case, one implementation should invoke the other.</p>
-<h2>Noncompliant Code Example</h2>
+<p>当两种方法具有相同的实现时，要么是错误的——有其他意图——或者是故意重复的，但这可能会让维护者感到困惑。 在后一种情况下，一个实现应该调用另一个。 不考虑数字和字符串文字。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 class Box(length: Int, width: Int, height: Int) {
   def volume: Int = {
@@ -14,7 +13,7 @@ class Box(length: Int, width: Int, height: Int) {
   }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的代码示例</h2>
 <pre>
 class Box(length: Int, width: Int, height: Int) {
   def volume: Int = {
@@ -27,6 +26,6 @@ class Box(length: Int, width: Int, height: Int) {
   }
 }
 </pre>
-<h2>Exceptions</h2>
-<p>Methods with fewer than 2 statements are ignored.</p>
+<h2>例外</h2>
+<p>忽略少于2个语句的方法。</p>
 

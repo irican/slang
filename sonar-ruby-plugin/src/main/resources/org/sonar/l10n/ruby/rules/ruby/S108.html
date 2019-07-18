@@ -1,14 +1,14 @@
-<p>Most of the time a block of code is empty when a piece of code is really missing. So such empty block must be either filled or removed.</p>
-<h2>Noncompliant Code Example</h2>
+<p>大多数情况下，当一段代码缺失时，代码块是空的。因此必须填充或移除这样的空块。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 def compute(a, b)
   sum = a + b
-  if  sum &gt; 0 # Noncompliant; empty on purpose or missing piece of code?
+  if  sum &gt; 0 # 不合规；是故意为空还是缺少一段代码？
   end
   puts "Result: #{sum}"
 end
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 def compute(a, b)
   sum = a + b
@@ -18,10 +18,10 @@ def compute(a, b)
   puts "Result: #{sum}"
 end
 </pre>
-<h2>Exceptions</h2>
-<p>When a block contains a comment, this block is not considered to be empty.</p>
-<p><code>while</code> and <code>unless</code> loops are also exception to the rule.</p>
+<h2>例外</h2>
+<p>当代码块包含注释时，此块不被视为空。</p>
+<p><code>while</code> 与 <code>unless</code> 循环也是这一规则的例外。</p>
 <pre>
-while @order.process_next; end # Compliant
+while @order.process_next; end # 合规
 </pre>
 

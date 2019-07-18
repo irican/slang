@@ -1,13 +1,12 @@
-<p>Nested <code>when</code> structures are difficult to understand because you can easily confuse the cases of an inner <code>when</code> as belonging
-to an outer statement. Therefore nested <code>when</code> statements should be avoided.</p>
-<p>Specifically, you should structure your code to avoid the need for nested <code>when</code> statements, but if you cannot, then consider moving the
-inner <code>when</code> to another function.</p>
-<h2>Noncompliant Code Example</h2>
+<p>嵌套的 <code>when</code> 结构很难理解，因为你很容易将内部 <code>when</code> 的情况混淆为属于外部语句。
+ 因此，应避免使用嵌套的 <code>when</code> 语句。</p>
+<p>具体来说，您应该构造代码以避免需要嵌套的 <code>when</code> 语句，但如果不能，则考虑将内部 <code>when</code> 移动到另一个函数。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 fun foo(n: Int, m: Int) {
   when (n) {
     0 -&gt;
-      when (m) {  // Noncompliant; nested when
+      when (m) {  // 不合规； 嵌套的 when
         // ...
       }
     1 -&gt; print("1")
@@ -15,7 +14,7 @@ fun foo(n: Int, m: Int) {
   }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 fun foo(n: Int, m: Int) {
   when (n) {

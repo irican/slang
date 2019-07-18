@@ -1,8 +1,7 @@
-<p>Nested <code>match</code> structures are difficult to understand because you can easily confuse the cases of an inner <code>match</code> as
-belonging to an outer statement. Therefore nested <code>match</code> statements should be avoided.</p>
-<p>Specifically, you should structure your code to avoid the need for nested <code>match</code> statements, but if you cannot, then consider moving
-the inner <code>match</code> to another function.</p>
-<h2>Noncompliant Code Example</h2>
+<p>嵌套的 <code>match</code> 结构很难理解，因为您很容易将内部 <code>match</code> 的case混淆为属于外部的语句。
+因此，应避免使用嵌套的 <code>match</code> 语句。</p>
+<p>具体来说，您应该构造代码，以避免嵌套 <code>match</code>语句，但是如果不能，则考虑将内部 <code>match</code> 转移到另一个函数。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 def foo(n: Int, m: Int): Unit = {
   n match {
@@ -15,7 +14,7 @@ def foo(n: Int, m: Int): Unit = {
   }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 def foo(n: Int, m: Int): Unit = {
   n match {

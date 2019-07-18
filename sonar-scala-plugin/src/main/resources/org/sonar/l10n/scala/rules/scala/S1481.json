@@ -1,5 +1,5 @@
 {
-  "title": "Unused local variables should be removed",
+  "title": "应该删除不使用的局部变量",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

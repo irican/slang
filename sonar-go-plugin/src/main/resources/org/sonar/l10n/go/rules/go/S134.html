@@ -1,0 +1,22 @@
+<p>嵌套 <code>if</code>， <code>for</code>， <code>while</code>， <code>switch</code>， 和 <code>try</code> 语句是制作所谓“意大利面条代码（Spaghetti code）”的关键因素。</p>
+<p>这样的代码很难读取、重构，因此很难维护。</p>
+<h2>不合规的代码示例</h2>
+<p>默认阈值为3：</p>
+<pre>
+if condition1 { // 合规 —— 深度 = 1
+	/* ... */
+	if condition2 { // 合规 —— 深度 = 2
+		/* ... */
+		for i := 1; i &lt;= 10; i++ { // 合规 —— 深度 = 3， 不超过限制
+			/* ... */
+			if condition4 { // 不合规 —— 深度 = 4
+				if condition5 { // 深度 = 5， 超过限制，但问题仅在深度 = 4时报告
+					/* ... */
+				}
+				return
+			}
+		}
+	}
+}
+</pre>
+

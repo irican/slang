@@ -1,5 +1,5 @@
 {
-  "title": "Cognitive Complexity of functions should not be too high",
+  "title": "函数的认知复杂性不应该太高",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

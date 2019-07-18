@@ -1,0 +1,23 @@
+<p>跳转语句 （<code>return</code>， <code>break</code>， <code>continue</code>， <code>goto</code>） 和 <code>throw</code> 表达会将控制流移出当前代码块。
+ 因此，跳转后出现的任何未标记语句都是死代码。 </p>
+<h2>不合规的代码示例</h2>
+<pre>
+func add(x, y int) int {
+	return x + y // 不合规
+	z := x + y // 死代码
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+func add(x, y int) int {
+	return x + y // 合规
+}
+</pre>
+<h2>请参阅</h2>
+<ul>
+  <li> <a href="http://cwe.mitre.org/data/definitions/561.html">MITRE, CWE-561</a> - Dead Code </li>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/uQCSBg">CERT, MSC56-J.</a> - Detect and remove superfluous code and values </li>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/NYA5">CERT, MSC12-C.</a> - Detect and remove code that has no effect or is never
+  executed </li>
+</ul>
+

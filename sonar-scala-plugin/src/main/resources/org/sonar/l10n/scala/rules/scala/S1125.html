@@ -1,5 +1,5 @@
-<p>Redundant Boolean literals should be removed from expressions to improve readability.</p>
-<h2>Noncompliant Code Example</h2>
+<p>应从表达式中删除冗余的布尔文字以提高可读性。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 if (booleanMethod() || false) { /* ... */ }
 doSomething(!false)
@@ -10,7 +10,7 @@ booleanVariable = if (booleanMethod()) false else exp
 booleanVariable = if (booleanMethod()) exp else true
 booleanVariable = if (booleanMethod()) exp else false
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 if (booleanMethod()) { /* ... */ }
 doSomething(true)

@@ -1,5 +1,5 @@
 {
-  "title": "\"case\" statements should not be nested",
+  "title": "不应嵌套 \"case\" 语句",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "\"case\" statements should have \"else\" clauses",
+  "title": "\"case\" 语句应有 \"else\" 子句",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

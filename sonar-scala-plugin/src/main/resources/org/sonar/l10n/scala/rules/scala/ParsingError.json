@@ -1,5 +1,5 @@
 {
-  "title": "Scala parser failure",
+  "title": "Scala解析失败",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

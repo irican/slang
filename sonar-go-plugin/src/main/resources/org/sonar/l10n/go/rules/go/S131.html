@@ -1,0 +1,27 @@
+<p>最后的 <code>default</code> 子句的目的是防御性编程。该子句应采取适当行为，或包含适当的注释，说明为何不采取任何行为。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+switch tag { // 不合规——缺少default子句
+case 0, 1, 2, 3:
+	foo()
+case 4, 5, 6, 7:
+	bar()
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+switch tag {
+case 0, 1, 2, 3:
+	foo()
+case 4, 5, 6, 7:
+	bar()
+default:
+	qix()
+}
+</pre>
+<h2>请参阅</h2>
+<ul>
+  <li> <a href="http://cwe.mitre.org/data/definitions/478.html">MITRE, CWE-478</a> - Missing Default Case in Switch Statement </li>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/YgE">CERT, MSC01-C.</a> - Strive for logical completeness </li>
+</ul>
+

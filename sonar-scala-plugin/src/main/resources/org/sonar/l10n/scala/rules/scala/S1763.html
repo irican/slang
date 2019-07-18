@@ -1,20 +1,20 @@
-<p>Jump statements (<code>return</code>) move control flow out of the current code block. So any statements that come after a jump are dead code. </p>
-<h2>Noncompliant Code Example</h2>
+<p>跳转语句 （<code>return</code>） 将控制流移出当前代码块。 因此，跳转后的任何语句都是死代码。 </p>
+<h2>不合规的代码示例</h2>
 <pre>
 def foo(a: Int) {
   val i = 10;
-  return a + i;       // Noncompliant
-  bar;                // dead code
+  return a + i;       // 不合规
+  bar;                // 死代码
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 def foo(a: Int): Int {
   val i = 10;
   return a + i;
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> MISRA C:2004, 14.1 - There shall be no unreachable code </li>
   <li> MISRA C++:2008, 0-1-1 - A project shall not contain unreachable code </li>

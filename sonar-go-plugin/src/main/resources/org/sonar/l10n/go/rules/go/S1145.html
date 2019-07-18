@@ -1,0 +1,31 @@
+<p><code>if</code> 语句的条件始终为false，则会使代码块失去功能。 <code>if</code>
+语句的条件始终为true，则完全是冗余的，这会降低代码的可读性。</p>
+<p>存在此类代码有三种可能的原因： </p>
+<ul>
+  <li> 调试期间更改了if语句，并且已提交调试代码。 </li>
+  <li> 有些值没有设置。 </li>
+  <li> 有些逻辑并没有做程序员认为它做的事情。 </li>
+</ul>
+<p>在任何这些情况下，应删除条件不恰当的 <code>if</code> 语句。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+if true {
+	doSomething()
+}
+
+if false {
+	doSomething()
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+doSomething();
+...
+</pre>
+<h2>请参阅</h2>
+<ul>
+  <li> <a href="http://cwe.mitre.org/data/definitions/489.html">MITRE, CWE-489</a> - Leftover Debug Code </li>
+  <li> <a href="http://cwe.mitre.org/data/definitions/570.html">MITRE, CWE-570</a> - Expression is Always False </li>
+  <li> <a href="http://cwe.mitre.org/data/definitions/571.html">MITRE, CWE-571</a> - Expression is Always True </li>
+</ul>
+

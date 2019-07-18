@@ -1,0 +1,42 @@
+<p>在 <code>switch</code> 语句中有两个 <code>cases</code> ，或者在 <code>if</code> 链中有两个分支都具有相同的实现，最好的情况下这是重复代码，
+在最坏的情况下这是代码错误。如果两个实例真正需要相同的逻辑，那么在 <code>if</code> 链中它们应该被合并，或者对于 <code>switch</code> ，
+其中一个应该与另一个连接起来。 </p>
+<h2>不合规的代码示例</h2>
+<pre>
+switch i {
+case 1:
+	doFirstThing()
+	doSomething()
+case 2:
+	doSomethingElse()
+case 3: // 不合规； 复制了 case 1 的实现
+	doFirstThing()
+	doSomething()
+default:
+	doTheRest()
+}
+
+if a &gt;= 0 &amp;&amp; a &lt; 10 {
+	doFirstThing()
+	doSomething()
+} else if a &gt;= 10 &amp;&amp; a &lt; 20 {
+	doSomethingElse()
+} else if a &gt;= 20 &amp;&amp; a &lt; 50 {
+	doFirstThing()
+	doSomething() // 不合规； 复制了第一个条件
+} else {
+	doTheRest()
+}
+</pre>
+<h2>例外</h2>
+<p>包含单行代码的 <code>if</code> 链中的块被忽略， <code>case</code> 块中包含一行代码的块也被忽略。</p>
+<pre>
+if a == 1 {
+  doSomething()  //没有问题，通常这样做是为了提高可读性
+} else if a == 2 {
+  doSomethingElse()
+} else {
+  doSomething()
+}
+</pre>
+

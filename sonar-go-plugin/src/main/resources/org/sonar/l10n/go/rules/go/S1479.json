@@ -1,0 +1,16 @@
+{
+  "title": "\"switch\" 语句不应该包含太多的 \"case\" 子句",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "30min"
+  },
+  "tags": [
+    "brain-overload"
+  ],
+  "defaultSeverity": "Major",
+  "ruleSpecification": "RSPEC-1479",
+  "sqKey": "S1479",
+  "scope": "All"
+}

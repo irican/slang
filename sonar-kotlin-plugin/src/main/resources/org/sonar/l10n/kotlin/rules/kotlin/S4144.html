@@ -1,6 +1,5 @@
-<p>When two functions have the same implementation, either it was a mistake - something else was intended - or the duplication was intentional, but
-may be confusing to maintainers. In the latter case, the code should be refactored.</p>
-<h2>Noncompliant Code Example</h2>
+<p>当两种方法具有相同的实现时，要么是错误的——有其他意图——或者是故意重复的，但这可能会让维护者感到困惑。在后一种情况下， 代码应该被重构。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 class MyClass {
   fun calculateCode(): String {
@@ -9,14 +8,14 @@ class MyClass {
     return "done"
   }
 
-  fun getStatus(): String {  // Noncompliant
+  fun getStatus(): String {  // 不合规
     doTheThing()
     doOtherThing()
     return "done"
   }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的代码示例</h2>
 <pre>
 class MyClass {
   fun calculateCode(): String {
@@ -28,6 +27,6 @@ class MyClass {
   fun getStatus(): String = calculateCode()
 }
 </pre>
-<h2>Exceptions</h2>
-<p>Methods with fewer than 2 statements are ignored.</p>
+<h2>例外</h2>
+<p>忽略少于2个语句的方法。</p>
 

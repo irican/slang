@@ -1,0 +1,18 @@
+<p>操作符对 （<code>=+</code>， <code>=-</code> 或 <code>=!</code> ） 的使用顺序被反转， 单个操作符（<code>+=</code>，
+<code>-=</code> 或 <code>!=</code>） 会被编译并运行， 但不会产生预期的结果。</p>
+<p>当<code>=+</code>， <code>=-</code>， 或 <code>=!</code>在两个操作符之间没有任何间距的情况下使用，且后面至少有一个空格字符时，此规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+var target, num = -5, 3
+
+target =- num  // 不合规； target = -3。这真的是要表达的意思吗？
+target =+ num // 不合规； target = 3
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+var target, num = -5, 3
+
+target = -num  // 合规；分配num逆值的意图很明显
+target += num
+</pre>
+

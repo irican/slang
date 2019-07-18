@@ -1,0 +1,13 @@
+<p>一个表达式的复杂度由它所包含的 <code>&amp;&amp;</code>， <code>||</code> 和 <code>condition ? ifTrue : ifFalse</code>
+运算符来决定。</p>
+<p>单个表达式的复杂度不应太高，否则会降低代码的可读性。</p>
+<h2>不合规的代码示例</h2>
+<p>默认阈值为3：</p>
+<pre>
+if (((condition1 &amp;&amp; condition2) || (condition3 &amp;&amp; condition4)) &amp;&amp; condition5) { ... }
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+if ( (myFirstCondition() || mySecondCondition()) &amp;&amp; myLastCondition()) { ... }
+</pre>
+

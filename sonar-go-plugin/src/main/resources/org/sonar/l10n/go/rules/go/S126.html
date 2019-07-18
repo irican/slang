@@ -1,0 +1,32 @@
+<p>只要 <code>if</code> 语句后跟一个或多个 <code>else if</code> 语句，此规则就适用；最后的 <code>else if</code>
+后面应该跟一个 <code>else</code> 语句。</p>
+<p>最后的 <code>else</code> 语句的目的是防御性编程。</p>
+<p><code>else</code> 语句应采取适当的操作或包含适当的注释，以确定不采取任何操作的原因。 这与在 <code>switch</code> 语句
+中末尾的 <code>default</code> 子句的要求一致。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+if x == 0 {
+	doSomething()
+} else if x == 1 {
+	doSomethingElse()
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+if x == 0 {
+	doSomething()
+} else if x == 1 {
+	doSomethingElse()
+} else {
+	return errors.New("unsupported int")
+}
+</pre>
+<h2>请参阅</h2>
+<ul>
+  <li> MISRA C:2004, 14.10 - All if...else if constructs shall be terminated with an else clause. </li>
+  <li> MISRA C++:2008, 6-4-2 - All if...else if constructs shall be terminated with an else clause. </li>
+  <li> MISRA C:2012, 15.7 - All if...else if constructs shall be terminated with an else statement </li>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/YgE">CERT, MSC01-C.</a> - Strive for logical completeness </li>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/PQHRAw">CERT, MSC57-J.</a> - Strive for logical completeness </li>
+</ul>
+

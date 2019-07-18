@@ -1,37 +1,34 @@
-<p>Hardcoding IP addresses is security-sensitive. It has led in the past to the following vulnerabilities:</p>
+<p>硬编码IP地址是安全敏感性的。它过去曾导致了以下漏洞：</p>
 <ul>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5901">CVE-2006-5901</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3725">CVE-2005-3725</a> </li>
 </ul>
-<p>Today's services have an ever-changing architecture due to their scaling and redundancy needs. It is a mistake to think that a service will always
-have the same IP address. When it does change, the hardcoded IP will have to be modified too. This will have an impact on the product development,
-delivery and deployment:</p>
+<p>今天的服务由于其扩展和冗余需求而具有不断变化的架构。认为服务总是需要相同的IP地址是错误的。
+当它发生变化时，硬编码的IP也必须进行修改。这会对产品开发，交付和部署产生影响：</p>
 <ul>
-  <li> The developers will have to do a rapid fix every time this happens, instead of having an operation team change a configuration file. </li>
-  <li> It forces the same address to be used in every environment (dev, sys, qa, prod). </li>
+  <li> 开发人员不得不在每次发生这种情况时都进行快速修复，而不是让操作团队更改配置文件。</li>
+  <li> 它强制在每个环境(dev、sys、qa、prod)中使用相同的地址。 </li>
 </ul>
-<p>Last but not least it has an effect on application security. Attackers might be able to decompile the code and thereby discover a potentially
-sensitive address. They can perform a Denial of Service attack on the service at this address or spoof the IP address. Such an attack is always
-possible, but in the case of a hardcoded IP address the fix will be much slower, which will increase an attack's impact.</p>
-<h2>Recommended Secure Coding Practices</h2>
+<p>同样重要的是，它对应用程序安全性有影响。攻击者可能能够反编译代码，从而发现一个潜在的敏感地址。
+它们可以对这个地址的服务执行拒绝服务攻击，或者欺骗IP地址。这样的攻击总是可能的，但是在硬编码IP地址的情况下，修复将慢得多，这将增加攻击的影响。</p>
+<h2>推荐的安全编码实践</h2>
 <ul>
-  <li> make the IP address configurable. </li>
+  <li> 使IP地址可配置。 </li>
 </ul>
-<h2>Noncompliant Code Example</h2>
+<h2>不合规的代码示例</h2>
 <pre>
-val ip = "192.168.12.42" // Noncompliant
+val ip = "192.168.12.42" // 不合规
 val socket = new Socket(ip, 6667)
 </pre>
-<h2>Exceptions</h2>
-<p>No issue is reported for the following cases because they are not considered sensitive:</p>
+<h2>例外</h2>
+<p>以下情况未报告任何问题，因为它们不被视为敏感的：</p>
 <ul>
-  <li> Loopback addresses 127.0.0.0/8 in CIDR notation (from 127.0.0.0 to 127.255.255.255) </li>
-  <li> Broadcast address 255.255.255.255 </li>
-  <li> Non routable address 0.0.0.0 </li>
-  <li> Strings of the form <code>2.5.&lt;number&gt;.&lt;number&gt;</code> as they <a href="http://www.oid-info.com/introduction.htm">often match
-  Object Identifiers</a> (OID). </li>
+  <li> 在CIDR表示法中环回地址127.0.0.0/8 （从 127.0.0.0 到 127.255.255.255）  </li>
+  <li> 广播地址 255.255.255.255 </li>
+  <li> 不可路由地址 0.0.0.0 </li>
+  <li> 符合 <code>2.5.&lt;number&gt;.&lt;number&gt;</code>格式的字符串，因为它们 <a href="http://www.oid-info.com/introduction.htm">往往匹配对象标识符</a> （OID）。 </li>
 </ul>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> OWASP Top 10 2017 Category A3 - Sensitive Data Exposure </li>
   <li> <a href="https://www.securecoding.cert.org/confluence/x/qQCHAQ">CERT, MSC03-J.</a> - Never hard code sensitive information </li>

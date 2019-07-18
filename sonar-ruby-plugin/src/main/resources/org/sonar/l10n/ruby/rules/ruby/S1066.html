@@ -1,19 +1,13 @@
-<p>Merging collapsible <code>if</code> statements increases the code's readability.</p>
-<h2>Noncompliant Code Example</h2>
+<p>合并可折叠（collapsible）的 <code>if</code> 语句能提高代码的可读性。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 if !filename.nil?
   if File.file?(filename) || File.directory?(filename)
     # ...
   end
 end
-
-if a then
-  unless b then
-    # ...
-  end
-end
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 def isFileOrDirectory(filename)
   File.file?(filename) || File.directory?(filename)
@@ -21,10 +15,6 @@ end
 # ...
 
 if !filename.nil? &amp;&amp; isFileOrDirectory(filename)
-  # ...
-end
-
-if a &amp;&amp; !b then
   # ...
 end
 </pre>

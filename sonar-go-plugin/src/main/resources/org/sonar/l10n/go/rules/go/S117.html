@@ -1,0 +1,17 @@
+<p>共享命名约定能使团队有效协作。当局部变量或函数参数名称与提供的正则表达式不匹配时，此规则会提出问题。</p>
+<h2>不合规的代码示例</h2>
+<p>使用默认的正则表达式 <code>^[a-z][a-zA-Z0-9_]*$：</code></p>
+<pre>
+func doSomething(PARAM int) { // 不合规
+  var LOCAL int; // 不合规
+  ...
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+func doSomething(param int) {
+  var local int;
+  ...
+}{code}
+</pre>
+

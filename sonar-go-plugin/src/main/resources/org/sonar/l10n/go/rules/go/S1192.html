@@ -1,0 +1,24 @@
+<p>重复的字符串文本使重构过程容易出错，因为必须确保更新所有发生的情况。</p>
+<p>另一方面，常量可以在许多地方引用，但只需要在一个地方进行更新。</p>
+<h2>不合规的代码示例</h2>
+<p>默认阈值为3：</p>
+<pre>
+func run() {
+	prepare("This should be a constant")  // 不合规；“This should ...” 重复3次
+	execute("This should be a constant")
+	release("This should be a constant")
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+const ACTION = "This should be a constant"
+
+func run() {
+	prepare(ACTION)
+	execute(ACTION)
+	release(ACTION)
+}
+</pre>
+<h2>例外</h2>
+<p>为了防止产生一些误报，排除少于5个字符的文本。仅包含字母，数字和“_”的文本同样被排除。</p>
+

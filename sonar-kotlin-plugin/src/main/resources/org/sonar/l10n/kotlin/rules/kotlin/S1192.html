@@ -1,23 +1,23 @@
-<p>Duplicated string literals make the process of refactoring error-prone, since you must be sure to update all occurrences.</p>
-<p>On the other hand, constants can be referenced from many places, but only need to be updated in a single place.</p>
-<h2>Noncompliant Code Example</h2>
-<p>With the default threshold of 3:</p>
+<p>重复的字符串文本使重构过程容易出错，因为必须确保更新所有发生的情况。</p>
+<p>另一方面，常量可以在许多地方引用，但只需要在一个地方进行更新。</p>
+<h2>不合规的代码示例</h2>
+<p>默认阈值为3：</p>
 <pre>
 class A {
     fun run() {
-        prepare("string literal")    // Noncompliant - "string literal" is duplicated 3 times
+        prepare("string literal")    // 不合规 —— “string literal” 重复3次
         execute("string literal")
         release("string literal")
     }
 
     fun method() {
-        println("'")                 // Compliant - literal "'" has less than 5 characters and is excluded
+        println("'")                 // 合规 - 文本 “'” 少于5个字符并被排除在外
         println("'")
         println("'")
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 class A {
     companion object {
@@ -25,13 +25,12 @@ class A {
     }
 
     fun run() {
-        prepare(CONSTANT)    // Compliant
+        prepare(CONSTANT)    // 合规
         execute(CONSTANT)
         release(CONSTANT)
     }
 }
 </pre>
-<h2>Exceptions</h2>
-<p>To prevent generating some false-positives, literals having 5 or less characters are excluded as well as literals containing only letters, digits
-and '_'.</p>
+<h2>例外</h2>
+<p>为了防止产生一些误报，排除少于5个字符的文本，以及只包含字母，数字和'_'的文本。</p>
 

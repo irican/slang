@@ -1,0 +1,30 @@
+<p>当两种方法具有相同的实现时，要么是错误的——有其他意图——或者重复是故意的，但可能会让维护者感到困惑。 在后一种情况下，一个实现应该调用另一个。 不考虑数字和字符串文字。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+func fun1() (x, y int) {
+  a, b := 1, 2
+  b, a = a, b
+  return a, b
+}
+
+func fun2() (x, y int) {  // 不合规； fun1 和 fun2 有同样的实现
+  a, b := 1, 2
+  b, a = a, b
+  return a, b
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+func fun1() (x, y int) {
+  a, b := 1, 2
+  b, a = a, b
+  return a, b
+}
+
+func fun2() (x, y int) {  // 合规
+  return fun1()
+}
+</pre>
+<h2>例外</h2>
+<p>忽略少于2个语句的函数。</p>
+

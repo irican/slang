@@ -1,0 +1,31 @@
+<p>将具有相同实现的所有分支置于 <code>switch</code> 或 <code>if</code> 链中是错误的。要么发生了复制粘贴错误，要么应该执行不同的操作，或者根本不应该有 <code>switch</code>/<code>if</code> 链。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+if b == 0 {  // 不合规
+  doOneMoreThing()
+} else {
+  doOneMoreThing()
+}
+
+switch i {  // 不合规
+  case 1:
+    doSomething()
+  case 2:
+    doSomething()
+  case 3:
+    doSomething()
+  default:
+    doSomething()
+}
+</pre>
+<h2>例外</h2>
+<p>此规则不适用于 <code>if</code> 链没有 <code>else</code>， or 或 <code>switch</code> 没有 <code>default</code>
+子句。</p>
+<pre>
+if b == 0 {    //没问题，这可能是为了使代码更具可读性
+  doSomething()
+} else if b == 1 {
+  doSomething()
+}
+</pre>
+

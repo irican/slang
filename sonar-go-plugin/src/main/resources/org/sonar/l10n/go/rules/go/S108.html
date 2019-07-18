@@ -1,0 +1,22 @@
+<p>大多数情况下，当代码块是空的时，一段代码真的丢失了。 因此必须填充或移除这样的空块。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+func compute(a int, b int) {
+	sum := a + b
+	if  sum &gt; 0 { } // 不合规； 是故意为空还是缺少一段代码？
+	fmt.Println("Result:", sum)
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+func compute(a int, b int) {
+	sum := a + b
+	if  sum &gt; 0 {
+		fmt.Println("Positive result")
+	}
+	fmt.Println("Result:", sum)
+}
+</pre>
+<h2>例外</h2>
+<p>当代码块包含注释时，此块不被视为空。 带有空代码块的 <code>for</code> 和 <code>select</code> 语句也被忽略。</p>
+

@@ -1,7 +1,7 @@
-<p>Having two <code>cases</code> in a <code>match</code> statement or two branches in an <code>if</code> chain with the same implementation is at best
-duplicate code, and at worst a coding error. If the same logic is truly needed for both instances, then in an <code>if</code> chain they should be
-combined, or for a <code>match</code>, one should fall through to the other. </p>
-<h2>Noncompliant Code Example</h2>
+<p>在 <code>match</code>语句中有两个 <code>cases</code> ，或者在<code>if</code> 链中有两个分支都具有相同的实现，最好的情况下这是重复代码，
+在最坏的情况下这是代码错误。 如果两个实例真正需要相同的逻辑，那么在<code>if</code> 链中它们应该被合并，或者对于 <code>match</code>，
+其中一个应该与另一个连接起来。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 value match {
   case 1 =&gt;
@@ -9,7 +9,7 @@ value match {
     doSomething
   case 2 =&gt;
     doSomethingDifferent
-  case 3 =&gt; // Noncompliant; duplicates case 1's implementation
+  case 3 =&gt; // 不合规； 复制了 case 1 的实现
     doFirstThing
     doSomething
   case _ =&gt;
@@ -25,15 +25,14 @@ else if (a &gt;= 10 &amp;&amp; a &lt; 20) {
 }
 else if (a &gt;= 20 &amp;&amp; a &lt; 50) {
   doFirstThing
-  doTheThing  // Noncompliant; duplicates first condition
+  doTheThing  // 不合规； 复制了第一个条件
 }
 else {
   doTheRest
 }
 </pre>
-<h2>Exceptions</h2>
-<p>Blocks in an <code>if</code> chain that contain a single line of code are ignored, as are blocks in a <code>match</code> statement that contain a
-single line of code.</p>
+<h2>例外</h2>
+<p>包含单行代码的 <code>if</code> 链中的块被忽略， <code>match</code> 语句中包含一行代码的块也被忽略，</p>
 <pre>
 if(a == 1) {
   doSomething  //no issue, usually this is done on purpose to increase the readability
@@ -43,12 +42,11 @@ if(a == 1) {
   doSomething
 }
 </pre>
-<p>But this exception does not apply to <code>if</code> chains without <code>else</code>-s, or to <code>match</code>-es without default clauses when
-all branches have the same single line of code. In case of <code>if</code> chains with <code>else</code>-s, or of <code>match</code>-es with default
-clauses, rule {rule:scala:S3923} raises a bug. </p>
+<p>但是，当所有分支具有相同的单独一行代码时，此例外不适用于 <code>if</code> 链没有 <code>else</code>，或 <code>match</code> 没有default子句。
+如果 <code>if</code> 链有 <code>else</code>， 或 <code>match</code>有default子句， 规则 {rule:scala:S3923} 报告一个bug。 </p>
 <pre>
 if(a == 1) {
-  doSomething  //Noncompliant, this might have been done on purpose but probably not
+  doSomething  //不合规，这可能是故意的，但可能不是
 } else if (a == 2) {
   doSomething
 }

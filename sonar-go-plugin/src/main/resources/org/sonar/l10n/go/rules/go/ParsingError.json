@@ -1,5 +1,5 @@
 {
-  "title": "Track parsing failures",
+  "title": "跟踪解析错误",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

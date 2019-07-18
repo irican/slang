@@ -1,0 +1,38 @@
+<p>嵌套的 <code>switch</code> 结构很难理解，因为您很容易将内部 <code>switch</code> 的case混淆为属于外部的语句。
+ 因此，应避免使用嵌套的 <code>switch</code> 语句。</p>
+<p>具体来说，您应该构造代码，以避免嵌套 <code>switch</code> 语句，但是如果不能，则考虑将内部 <code>switch</code> 转移到另一个函数。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+func foo(x,y int) {
+	switch x {
+	case 0:
+		switch y { // Noncompliant; nested switch
+		// ...
+		}
+	case 1:
+		// ...
+	default:
+		// ...
+	}
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+func foo(x,y int) {
+	switch x {
+	case 0:
+		bar(y)
+	case 1:
+		// ...
+	default:
+		// ...
+	}
+}
+
+func bar(y int) {
+	switch y {
+	// ...
+	}
+}
+</pre>
+

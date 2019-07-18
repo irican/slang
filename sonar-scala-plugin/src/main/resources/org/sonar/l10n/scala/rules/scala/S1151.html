@@ -1,11 +1,11 @@
-<p>The <code>match</code> statement should be used only to clearly define some new branches in the control flow. As soon as a <code>case</code> clause
-contains too many statements this highly decreases the readability of the overall control flow statement. In such case, the content of the
-<code>case</code> clause should be extracted into a dedicated method.</p>
-<h2>Noncompliant Code Example</h2>
-<p>With the default threshold of 5:</p>
+<p><code>match</code> 语句只应用于在控制流中明确定义一些新分支。 只要 <code>case</code> 
+子句包含太多语句，就会大大降低整个控制流语句的可读性。 在这种情况下，应将
+<code>case</code> 子句的内容提取到专用方法中。</p>
+<h2>不合规的代码示例</h2>
+<p>默认阈值为5：</p>
 <pre>
 myVariable match {
-  case 0 =&gt; // Noncompliant: 6 lines till next case
+  case 0 =&gt; // 不合规: 到下一个case之间有6行
     methodCall1()
     methodCall2()
     methodCall3()
@@ -15,7 +15,7 @@ myVariable match {
   // ...
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 myVariable match {
   case 0 =&gt; doSomething()

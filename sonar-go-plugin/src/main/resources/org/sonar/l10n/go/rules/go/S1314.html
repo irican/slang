@@ -1,0 +1,23 @@
+<p>以零开始的整数字面值是八进制值，而不是十进制值。虽然完全支持使用八进制值，但是大多数开发人员没有使用八进制值的经验。
+ 他们可能不认识八进制值，而是把它们误认为十进制值。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+func printTen() {
+	myNumber := 010 // 不合规。 myNumber将为8，而不是10——这真的是预期的吗？
+	fmt.Println(myNumber)
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+func printTen() {
+	myNumber := 10
+	fmt.Println(myNumber)
+}
+</pre>
+<h2>请参阅</h2>
+<ul>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/_QC7AQ">CERT, DCL18-C.</a> - Do not begin integer constants with 0 when specifying a
+  decimal value </li>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/hYClBg">CERT, DCL50-J.</a> - Use visually distinct identifiers </li>
+</ul>
+

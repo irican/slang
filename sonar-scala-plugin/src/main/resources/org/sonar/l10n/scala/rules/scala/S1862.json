@@ -1,5 +1,5 @@
 {
-  "title": "Related \"if\"\/\"else if\" statements and \"case\" in a \"match\" should not have the same condition",
+  "title": "相关的 \"if\"\/\"else if\" 语句和 \"match\" 中的 \"case\" 语句不应该具有相同的条件",
   "type": "BUG",
   "status": "ready",
   "remediation": {

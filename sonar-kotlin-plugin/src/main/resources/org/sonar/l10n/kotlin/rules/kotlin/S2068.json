@@ -1,5 +1,5 @@
 {
-  "title": "Credentials should not be hard-coded",
+  "title": "凭证（Credential）不应该是硬编码的",
   "type": "VULNERABILITY",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "\"case\" statements should not have too many \"when\" clauses",
+  "title": "\"case\" 语句不应该包含太多的 \"when\" 子句",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Control flow statements \"if\", \"for\", \"while\", \"until\", \"case\" and \"begin...rescue\" should not be nested too deeply",
+  "title": "控制流语句 \"if\"， \"for\"， \"while\"， \"until\"， \"case\" 和 \"begin...rescue\" 不应嵌套太深",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

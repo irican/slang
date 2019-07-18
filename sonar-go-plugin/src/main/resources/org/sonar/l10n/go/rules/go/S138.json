@@ -1,0 +1,16 @@
+{
+  "title": "函数和方法不应有太多行",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "20min"
+  },
+  "tags": [
+    "brain-overload"
+  ],
+  "defaultSeverity": "Major",
+  "ruleSpecification": "RSPEC-138",
+  "sqKey": "S138",
+  "scope": "Main"
+}

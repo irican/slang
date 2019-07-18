@@ -1,6 +1,5 @@
-<p>The requirement for a final <code>else</code> clause is defensive programming. The clause should either take appropriate action, or contain a
-suitable comment as to why no action is taken.</p>
-<h2>Noncompliant Code Example</h2>
+<p>最后的 <code>else</code> 子句的目的是防御性编程。 该子句应采取适当行为，或包含适当的评论，说明为何不采取任何行为。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 case param
   when 1
@@ -9,7 +8,7 @@ case param
     do_something_else()
 end
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 case param
   when 1
@@ -20,7 +19,7 @@ case param
     handle_error('error_message')
 end
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> MISRA C:2004, 15.0 - The MISRA C <em>switch</em> syntax shall be used. </li>
   <li> MISRA C:2004, 15.3 - The final clause of a switch statement shall be the default clause </li>

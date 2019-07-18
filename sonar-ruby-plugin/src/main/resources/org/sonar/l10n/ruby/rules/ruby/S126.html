@@ -1,9 +1,9 @@
-<p>This rule applies whenever an <code>if</code> statement is followed by one or more <code>elsif</code> statements; the final <code>elsif</code>
-should be followed by an <code>else</code> statement.</p>
-<p>The requirement for a final <code>else</code> statement is defensive programming.</p>
-<p>The <code>else</code> statement should either take appropriate action or contain a suitable comment as to why no action is taken. This is
-consistent with the requirement to have a final <code>else</code> clause in a <code>case</code> statement.</p>
-<h2>Noncompliant Code Example</h2>
+<p>只要 <code>if</code> 语句后跟一个或多个 <code>elsif</code> 语句，此规则就适用；最后的 <code>elsif</code>
+后面应该跟一个 <code>else</code> 语句。</p>
+<p>最后的 <code>else</code> 语句的目的是防御性编程。</p>
+<p><code>else</code> 语句应采取适当的操作或包含适当的注释，以确定不采取任何操作的原因。这与在 <code>case</code> 语句
+中末尾的 <code>else</code> 子句的要求一致。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 if x == 0
   doSomething
@@ -11,7 +11,7 @@ elsif x == 1
   doSomethingElse
 end
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 if x == 0
   doSomething
@@ -21,7 +21,7 @@ else
   raise 'An error has occured'
 end
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> MISRA C:2004, 14.10 - All if...else if constructs shall be terminated with an else clause. </li>
   <li> MISRA C++:2008, 6-4-2 - All if...else if constructs shall be terminated with an else clause. </li>

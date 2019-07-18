@@ -1,5 +1,5 @@
 {
-  "title": "Redundant pairs of parentheses should be removed",
+  "title": "应删除冗余的括号",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

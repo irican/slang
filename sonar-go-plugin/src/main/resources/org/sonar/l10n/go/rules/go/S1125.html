@@ -1,0 +1,18 @@
+<p>应从表达式中删除冗余的布尔文字以提高可读性。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+if boolFunc() == true {
+    // ...
+}
+
+flag := x &amp;&amp; true
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+if boolFunc() {
+    // ...
+}
+
+flag := x
+</pre>
+

@@ -1,5 +1,5 @@
 {
-  "title": "Ruby parser failure",
+  "title": "Ruby解析失败",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,22 +1,21 @@
-<p>Integer literals starting with a zero are octal rather than decimal values. While using octal values is fully supported, most developers do not
-have experience with them. They may not recognize octal values as such, mistaking them instead for decimal values.</p>
-<h2>Noncompliant Code Example</h2>
+<p>以零开始的整数字面值是八进制值，而不是十进制值。虽然完全支持使用八进制值，但是大多数开发人员没有使用八进制值的经验。
+他们可能不认识八进制值，而是把它们误认为十进制值。</p>
+<h2>不合规的代码示例</h2>
 <pre>
-my_number = 023 # Noncompliant. my_number will hold 19, not 23 - was this really expected?
+my_number = 023 # 不合规。 my_number 将为 19, 而不是 23 —— 这真的是预期的吗？
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 my_number = 23
 </pre>
-<h2>Exceptions</h2>
-<p>This rule does not apply to values smaller than 8 and octal values having 3 digits, since 3 digits octal values are often used as file permission
-masks.</p>
-<p>Example:</p>
+<h2>例外</h2>
+<p>此规则不适用于小于8的值和具有3位数的八进制值，因为3位八进制值通常用作文件权限掩码。</p>
+<p>例子：</p>
 <pre>
 permission_mask = 0777
 day_of_month = 03
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> MISRA C:2004, 7.1 - Octal constants (other than zero) and octal escape sequences shall not be used. </li>
   <li> MISRA C++:2008, 2-13-2 - Octal constants (other than zero) and octal escape sequences (other than "\0") shall not be used </li>

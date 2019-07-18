@@ -1,7 +1,7 @@
-<p>Having two clauses in a <code>when</code> statement or two branches in an <code>if</code> chain with the same implementation is at best duplicate
-code, and at worst a coding error. If the same logic is truly needed for both instances, then in an <code>if</code> chain they should be combined, or
-for a <code>when</code>, duplicates should be refactored. </p>
-<h2>Noncompliant Code Example</h2>
+<p>在<code>when</code> 语句或者在 <code>if</code> 链中有两个分支都具有相同的实现，最好的情况下这是重复代码，
+在最坏的情况下这是代码错误。 如果两个实例真正需要相同的逻辑，那么在 <code>if</code> 链中它们应该被合并，或者对于 <code>when</code>，
+重复代码应该被重构。 </p>
+<h2>不合规的代码示例</h2>
 <pre>
 fun s1871(x: Int) {
     when (x) {
@@ -16,24 +16,23 @@ fun s1871(x: Int) {
     }
 }
 </pre>
-<h2>Exceptions</h2>
-<p>Blocks in an <code>if</code> chain that contain a single line of code are ignored, as are blocks in a <code>when</code> statement that contain a
-single line of code with or without a following <code>break</code>.</p>
+<h2>例外</h2>
+<p>包含单行代码的 <code>if</code> 链中的块被忽略，  <code>when</code> 链中包含一行代码的块也被忽略，无论有没有跟着 <code>break</code>。</p>
 <pre>
 if (a == 1) {
-    doSomething()  //no issue, usually this is done on purpose to increase the readability
+    doSomething()  //没有问题，通常这样做是为了提高可读性
 } else if (a == 2) {
     doSomethingElse()
 } else {
     doSomething()
 }
 </pre>
-<p>But this exception does not apply to <code>if</code> chains without <code>else</code>-s, or to <code>when</code>-es without <code>else</code>
-clauses when all branches have the same single line of code. In case of <code>if</code> chains with <code>else</code>-s, or of <code>when</code>-es
-with default clauses, rule {rule:kotlin:S3923} raises a bug. </p>
+<p>但是，当所有分支具有相同的单独一行代码时，此例外不适用于 <code>if</code> 链没有 <code>else</code>， 或 <code>when</code> 没有 <code>else</code>
+。 如果 <code>if</code> 链有 <code>else</code>， 或 <code>when</code>有
+有default子句， 规则 {rule:kotlin:S3923} 报告一个bug。 </p>
 <pre>
 if (a == 1) {
-  doSomething()  //Noncompliant, this might have been done on purpose but probably not
+  doSomething()  //不合规，这可能是故意的，但可能不是
 } else if (a == 2) {
   doSomething()
 }

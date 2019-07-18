@@ -1,23 +1,22 @@
-<p>Having all branches in a <code>match</code> or <code>if</code> chain with the same implementation is an error. Either a copy-paste error was made
-and something different should be executed, or there shouldn't be a <code>match</code>/<code>if</code> chain at all.</p>
-<h2>Noncompliant Code Example</h2>
+<p>将具有相同实现的所有分支置于 <code>match</code> 或 <code>if</code> 链中是错误的。要么发生了复制粘贴错误，要么应该执行不同的操作，或者根本不应该有 <code>match</code>/<code>if</code> 链。</p>
+<h2>不合规的代码示例</h2>
 <pre>
-if (b == 0) { // Noncompliant
+if (b == 0) { // 不合规
   doSomething
 } else {
   doSomething
 }
 
-i match { // Noncompliant
+i match { // 不合规
   case 1 =&gt; doSomething
   case 2 =&gt; doSomething
   case 3 =&gt; doSomething
   case _ =&gt; doSomething
 }
 </pre>
-<h2>Exceptions</h2>
-<p>This rule does not apply to <code>if</code> chains without <code>else</code>-s, or to <code>match</code>-es without <code>case _</code>
-alternatives.</p>
+<h2>例外</h2>
+<p>此规则不适用于 <code>if</code> 链没有 <code>else</code> ，或 <code>match</code> 没有 <code>case _</code>
+备择方案。</p>
 <pre>
 if (b == 0) {
   doSomething

@@ -1,0 +1,45 @@
+<p>一个 <code>if</code>/<code>else if</code> 语句链是从上到下计算的。最多只执行一个分支：第一个分支的计算条件为 <code>true</code>。 </p>
+<p>因此，复制条件会自动导致死代码。通常，这是由于复制/粘贴错误造成的。在最好的情况下，它只是死代码，在最坏的情况下，它是一个bug，
+随着代码的维护，它可能会引发更多的bug，并且显然，它可能会导致意外行为。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+func example(condition1, condition2 bool) {
+  if condition1 {
+  } else if condition1 { // 不合规
+  }
+}
+</pre>
+<pre>
+func SwitchWithMultipleConditions(param int) {
+  switch param {
+  case 1, 2, 3:
+    fmt.Println("&gt;1")
+  case 3, 4, 5: // 不合规； 3重复了
+    fmt.Println("&lt;1")
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+func example(condition1, condition2 bool) {
+  if condition1 {
+  } else if condition2 { //合规
+  }
+}
+</pre>
+<pre>
+func SwitchWithMultipleConditions(param int) {
+  switch param {
+  case 1, 2, 3:
+    fmt.Println("&gt;1")
+  case 4, 5: // 合规
+    fmt.Println("&lt;1")
+  }
+}
+</pre>
+<h2>请参阅</h2>
+<ul>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/NYA5">CERT, MSC12-C.</a> - Detect and remove code that has no effect or is never
+  executed </li>
+</ul>
+
