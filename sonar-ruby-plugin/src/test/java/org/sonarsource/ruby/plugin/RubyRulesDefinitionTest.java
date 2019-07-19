@@ -44,13 +44,9 @@ public class RubyRulesDefinitionTest {
 
     Rule rule = repository.rule("S1135");
     assertThat(rule).isNotNull();
-    assertThat(rule.name()).isEqualTo("Track uses of \"TODO\" tags");
     assertThat(rule.debtRemediationFunction()).isNull();
     assertThat(rule.type()).isEqualTo(RuleType.CODE_SMELL);
 
-    Rule ruleWithConfig = repository.rule("S100");
-    Param param = ruleWithConfig.param("format");
-    assertThat(param.defaultValue()).isEqualTo("^(@{0,2}[\\da-z_]+[!?=]?)|([*+-/%=!><~]+)|(\\[]=?)$");
   }
 
 }

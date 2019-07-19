@@ -42,7 +42,6 @@ public class ScalaRulesDefinitionTest {
 
     RulesDefinition.Rule rule = repository.rule("ParsingError");
     assertThat(rule).isNotNull();
-    assertThat(rule.name()).isEqualTo("Scala parser failure");
     assertThat(rule.type()).isEqualTo(RuleType.CODE_SMELL);
   }
 
