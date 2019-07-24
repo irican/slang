@@ -1,6 +1,6 @@
 17000;
 
-   02522; // Noncompliant {{Use decimal values instead of octal ones.}}
+   02522; // Noncompliant {{使用十进制值代替八进制值。}}
 // ^^^^^
 0o2522; // Noncompliant
 0O2522; // Noncompliant

@@ -42,7 +42,7 @@ public class DuplicateBranchCheck extends AbstractBranchDuplicationCheck {
           TextRange originalRange = original.metaData().textRange();
           ctx.reportIssue(
             duplicated,
-            "This branch's code block is the same as the block for the branch on line " + originalRange.start().line() + ".",
+            "该分支的代码块和" + originalRange.start().line() + "行的代码块相同。",
             new SecondaryLocation(originalRange, "Original"));
         });
     }

@@ -10,7 +10,7 @@ if (x == 0) {
 
 if (x == 0) {
   doSomething();
-} else if (x == 1) { // Noncompliant {{Add the missing "else" clause.}}
+} else if (x == 1) { // Noncompliant {{加入遗漏的 "else" 子句。}}
 //^^^^^^^
   doSomethingElse();
 };

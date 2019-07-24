@@ -1,7 +1,7 @@
 // if
 
 if (x) {
-} else if (x) { // Noncompliant {{This condition duplicates the one on line 3.}}
+} else if (x) { // Noncompliant {{此条件与位于3行的重复。}}
 };
 
 if (x) {};

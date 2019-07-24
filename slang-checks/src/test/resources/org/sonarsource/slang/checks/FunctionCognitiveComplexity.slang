@@ -9,16 +9,16 @@ fun ok() {
   };
 }
 
-fun ko() { // Noncompliant {{Refactor this method to reduce its Cognitive Complexity from 5 to the 4 allowed.}} [[effortToFix=1]]
+fun ko() { // Noncompliant {{重构此方法以将其认知复杂度从5降低到被允许的4。}} [[effortToFix=1]]
 //  ^^
   if (x) {
 //^^< {{+1}}
     if (y) {
-//  ^^< {{+2 (incl 1 for nesting)}}
+//  ^^< {{+2（包含1层嵌套）}}
       foo();
     };
     if (z) {
-//  ^^< {{+2 (incl 1 for nesting)}}
+//  ^^< {{+2（包含1层嵌套）}}
       foo();
     };
   };

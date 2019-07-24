@@ -22,7 +22,7 @@
   if (x) {
     foo;
     foo;
-  } else if (y) { // Noncompliant {{This branch's code block is the same as the block for the branch on line 22.}}
+  } else if (y) { // Noncompliant {{该分支的代码块和22行的代码块相同。}}
 //              ^[el=+4;ec=3]
     foo;
     foo;

@@ -34,7 +34,7 @@ public class MatchWithoutElseCheck implements SlangCheck {
     init.register(MatchTree.class, (ctx, tree) -> {
       if (tree.cases().stream().noneMatch(matchCase -> matchCase.expression() == null)) {
         Token keyword = tree.keyword();
-        String message = String.format("Add a default clause to this \"%s\" statement.", keyword.text());
+        String message = String.format("在此 \"%s\" 语句中加入一个默认（default）子句。", keyword.text());
         ctx.reportIssue(keyword, message);
       }
     });

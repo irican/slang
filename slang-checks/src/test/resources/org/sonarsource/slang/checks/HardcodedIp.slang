@@ -1,6 +1,6 @@
 x = 120;
 "120";
-ip = "1.2.3.4"; // Noncompliant {{Make sure using this hardcoded IP address is safe here.}}
+ip = "1.2.3.4"; // Noncompliant {{确保在此处使用此硬编码的IP地址是安全的。}}
 //   ^^^^^^^^^
 "1.2.3.4"; // Noncompliant
 "1.2.3.4:80"; // Noncompliant
@@ -8,7 +8,7 @@ ip = "1.2.3.4"; // Noncompliant {{Make sure using this hardcoded IP address is s
 "1.2.3.4:a";
 "1.2.3.4.5";
 
-// Noncompliant@+1 {{Make sure using this hardcoded IP address is safe here.}}
+// Noncompliant@+1 {{确保在此处使用此硬编码的IP地址是安全的。}}
 url = "http://192.168.0.1/admin.html";
 // Noncompliant@+1
 url = "http://192.168.0.1:8181/admin.html";
@@ -23,7 +23,7 @@ notAnIp5 = "0.256.0.0";
 fileName = "v0.0.1.200__do_something.sql"; // Compliant - suffixed and prefixed
 version = "1.0.0.0-1"; // Compliant - suffixed
 
-"1080:0:0:0:8:800:200C:417A"; // Noncompliant {{Make sure using this hardcoded IP address is safe here.}}
+"1080:0:0:0:8:800:200C:417A"; // Noncompliant {{确保在此处使用此硬编码的IP地址是安全的。}}
 "[1080::8:800:200C:417A]"; // Noncompliant
 "::800:200C:417A"; // Noncompliant
 "1080:800:200C::"; // Noncompliant
@@ -48,7 +48,7 @@ version = "1.0.0.0-1"; // Compliant - suffixed
 "1080:0:0:0:8:200C:131.107.129"; // Compliant - not valid IPv6
 "1080:0:0:0:8:200C:417A:131.107"; // Compliant - not valid IPv6
 
-// Noncompliant@+1 {{Make sure using this hardcoded IP address is safe here.}}
+// Noncompliant@+1 {{确保在此处使用此硬编码的IP地址是安全的。}}
 "http://[2001:db8:1f70::999:de8:7648:6e8]";
 // Noncompliant@+1
 "http://[2001:db8:1f70::999:de8:7648:6e8]:100/";

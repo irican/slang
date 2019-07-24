@@ -45,7 +45,7 @@ public class TooDeeplyNestedStatementsCheck implements SlangCheck {
 
   @RuleProperty(
     key = "max",
-    description = "Maximum allowed control flow statement nesting depth",
+    description = "允许的最大控制流语句嵌套深度",
     defaultValue = "" + DEFAULT_MAX_DEPTH)
   public int max = DEFAULT_MAX_DEPTH;
 
@@ -95,13 +95,13 @@ public class TooDeeplyNestedStatementsCheck implements SlangCheck {
   }
 
   private void reportIssue(CheckContext ctx, Tree statement, Deque<Token> nestedStatements) {
-    String message = String.format("Refactor this code to not nest more than %s control flow statements.", max);
+    String message = String.format("重构此代码使得其控制流语句嵌套的深度不会超过%s。", max);
     List<SecondaryLocation> secondaryLocations = new ArrayList<>(nestedStatements.size());
     int nestedDepth = 0;
 
     while (!nestedStatements.isEmpty()) {
       nestedDepth++;
-      String secondaryLocationMessage = String.format("Nesting depth %s", nestedDepth);
+      String secondaryLocationMessage = String.format("嵌套深度为 %s", nestedDepth);
       secondaryLocations.add(new SecondaryLocation(nestedStatements.removeLast().textRange(), secondaryLocationMessage));
     }
 

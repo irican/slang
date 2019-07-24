@@ -48,7 +48,7 @@ public class TodoCommentCheck implements SlangCheck {
             new TextPointerImpl(location.endLine(), location.endLineOffset()),
             new TextPointerImpl(location.endLine(), location.endLineOffset() + 4)
           );
-          ctx.reportIssue(todoRange, "Complete the task associated to this TODO comment.");
+          ctx.reportIssue(todoRange, "完成与此TODO注释相关的任务。");
         }
       })
     );

@@ -67,9 +67,9 @@ public class WrongAssignmentOperatorCheck implements SlangCheck {
   private static String getMessage(Token expressionFirstToken, CheckContext aeTree) {
     if (isSingleNegationAssignment(expressionFirstToken, aeTree)) {
       // For expressions such as "a = b =! c" we want to display the other message
-      return "Add a space between \"=\" and \"!\" to avoid confusion.";
+      return "在 \"=\" 和 \"!\" 之间加入空格以避免混淆。";
     }
-    return "Was \"" + expressionFirstToken.text() + "=\" meant instead?";
+    return "要表达的意思是 \"" + expressionFirstToken.text() + "=\" 吗？";
   }
 
   private static boolean isSingleNegationAssignment(Token firstToken, CheckContext aeTree) {

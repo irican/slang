@@ -32,7 +32,7 @@ public class TooManyLinesOfCodeFileCheck implements SlangCheck {
 
   @RuleProperty(
     key = "Max",
-    description = "Maximum authorized lines of code in a file.",
+    description = "一个文件中允许的最大代码行数。",
     defaultValue = "" + DEFAULT_MAX)
   public int max = DEFAULT_MAX;
 
@@ -42,7 +42,7 @@ public class TooManyLinesOfCodeFileCheck implements SlangCheck {
       int numberOfLinesOfCode = tree.metaData().linesOfCode().size();
       if (numberOfLinesOfCode > max) {
         String message = String.format(
-          "File \"%s\" has %s lines, which is greater than %s authorized. Split it into smaller files.",
+          "文件 \"%s\" 有%s行代码，超过了允许的最大行数%s。请将其拆分为较小的文件。",
           ctx.filename(), numberOfLinesOfCode, max);
         ctx.reportFileIssue(message);
       }

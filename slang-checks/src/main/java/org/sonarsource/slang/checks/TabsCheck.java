@@ -32,7 +32,7 @@ public class TabsCheck implements SlangCheck {
     init.register(TopLevelTree.class, (ctx, tree) -> {
       String fileContent = ctx.fileContent();
       if (fileContent.contains("\t")) {
-        String message = String.format("Replace all tab characters in this file \"%s\" by sequences of white-spaces.", ctx.filename());
+        String message = String.format("用空格序列替换此文件 \"%s\" 中的所有制表符。", ctx.filename());
         ctx.reportFileIssue(message);
       }
     });

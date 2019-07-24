@@ -34,7 +34,7 @@ public class AllBranchesIdenticalCheck extends AbstractBranchDuplicationCheck {
 
   @Override
   protected void onAllIdenticalBranches(CheckContext ctx, Tree tree) {
-    ctx.reportIssue(tree, "Remove this conditional structure or edit its code blocks so that they're not all the same.");
+    ctx.reportIssue(tree, "删除此条件结构或编辑其代码块，使它们不完全相同。");
   }
 
 }

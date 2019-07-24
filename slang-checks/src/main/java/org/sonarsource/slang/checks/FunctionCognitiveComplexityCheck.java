@@ -36,7 +36,7 @@ public class FunctionCognitiveComplexityCheck implements SlangCheck {
 
   @RuleProperty(
     key = "threshold",
-    description = "The maximum authorized complexity.",
+    description = "允许的最大复杂度。",
     defaultValue = "" + DEFAULT_THRESHOLD
   )
   public int threshold = DEFAULT_THRESHOLD;
@@ -51,7 +51,7 @@ public class FunctionCognitiveComplexityCheck implements SlangCheck {
       CognitiveComplexity complexity = new CognitiveComplexity(tree);
       if (complexity.value() > threshold) {
         String message = String.format(
-          "Refactor this method to reduce its Cognitive Complexity from %s to the %s allowed.",
+          "重构此方法以将其认知复杂度从%s降低到被允许的%s。",
           complexity.value(),
           threshold);
         List<SecondaryLocation> secondaryLocations = complexity.increments().stream()
@@ -67,7 +67,7 @@ public class FunctionCognitiveComplexityCheck implements SlangCheck {
     int nestingLevel = increment.nestingLevel();
     String message = "+" + (nestingLevel + 1);
     if (nestingLevel > 0) {
-      message += " (incl " + nestingLevel + " for nesting)";
+      message += "（包含" + nestingLevel + "层嵌套）";
     }
     return new SecondaryLocation(increment.token().textRange(), message);
   }

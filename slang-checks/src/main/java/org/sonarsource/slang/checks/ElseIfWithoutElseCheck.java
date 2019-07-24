@@ -31,7 +31,7 @@ import org.sonarsource.slang.impl.TextRangeImpl;
 @Rule(key = "S126")
 public class ElseIfWithoutElseCheck implements SlangCheck {
 
-  private static final String MESSAGE = "Add the missing \"else\" clause.";
+  private static final String MESSAGE = "加入遗漏的 \"else\" 子句。";
 
   @Override
   public void initialize(InitContext init) {

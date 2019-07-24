@@ -30,7 +30,7 @@ import static org.sonarsource.slang.api.IntegerLiteralTree.Base.OCTAL;
 @Rule(key = "S1314")
 public class OctalValuesCheck implements SlangCheck {
 
-  private static final String MESSAGE = "Use decimal values instead of octal ones.";
+  private static final String MESSAGE = "使用十进制值代替八进制值。";
   private static final BigInteger EIGHT = BigInteger.valueOf(OCTAL.getRadix());
   private static final int FILE_PERMISSION_MASK_LENGTH = 3;
 

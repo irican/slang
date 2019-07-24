@@ -44,8 +44,8 @@ import static org.sonarsource.slang.utils.SyntacticEquivalence.areEquivalent;
 @Rule(key = "S4144")
 public class DuplicatedFunctionImplementationCheck implements SlangCheck {
 
-  private static final String MESSAGE = "Update this function so that its implementation is not identical to \"%s\" on line %s.";
-  private static final String MESSAGE_NO_NAME = "Update this function so that its implementation is not identical to the one on line %s.";
+  private static final String MESSAGE = "更新此函数使得它的实现不与 \"%s\" 相同，后者位于 %s 行。";
+  private static final String MESSAGE_NO_NAME = "更新此函数使得它的实现不与 %s 行的相同。";
   private static final int MINIMUM_STATEMENTS_COUNT = 2;
 
   @Override
@@ -110,7 +110,7 @@ public class DuplicatedFunctionImplementationCheck implements SlangCheck {
       secondaryTree = original;
       message = String.format(MESSAGE_NO_NAME, line);
     }
-    SecondaryLocation secondaryLocation = new SecondaryLocation(secondaryTree, "original implementation");
+    SecondaryLocation secondaryLocation = new SecondaryLocation(secondaryTree, "原本的实现");
     IdentifierTree duplicateIdentifier = duplicate.name();
     Tree primaryTree = duplicateIdentifier != null ? duplicateIdentifier : duplicate;
     ctx.reportIssue(primaryTree, message, secondaryLocation);

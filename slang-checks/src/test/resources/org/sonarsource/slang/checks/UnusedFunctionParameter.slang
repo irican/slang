@@ -1,18 +1,18 @@
 void fun fooBar() {}  // OK
 
-void fun fooBar(int a) {}  // Noncompliant {{Remove this unused function parameter "a".}}
+void fun fooBar(int a) {}  // Noncompliant {{删除此未使用的函数参数 "a"。}}
 //                  ^
 
-void fun fooBar(int a, int b) {}  // Noncompliant {{Remove these unused function parameters.}}
-//                  ^      ^<  {{Remove this unused method parameter b".}}
-//                  ^@-1<      {{Remove this unused method parameter a".}}
+void fun fooBar(int a, int b) {}  // Noncompliant {{删除这些未使用的函数参数。}}
+//                  ^      ^<  {{删除此未使用的方法参数 "b"。}}
+//                  ^@-1<      {{删除此未使用的方法参数 "a"。}}
 
-void fun fooBar(int a, int b) {   // Noncompliant {{Remove this unused function parameter "b".}}
+void fun fooBar(int a, int b) {   // Noncompliant {{删除此未使用的函数参数 "b"。}}
 //                         ^
   x = a;
 }
 
-void fun fooBar(int a, int b) {   // Noncompliant {{Remove this unused function parameter "a".}}
+void fun fooBar(int a, int b) {   // Noncompliant {{删除此未使用的函数参数 "a"。}}
 //                  ^
   match (b) { }
 }

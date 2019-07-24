@@ -9,7 +9,7 @@ if (false) { // Compliant
 //  ^^>
       if (true) {
 //    ^^>
-        if (true) { // Noncompliant {{Refactor this code to not nest more than 3 control flow statements.}}
+        if (true) { // Noncompliant {{重构此代码使得其控制流语句嵌套的深度不会超过3。}}
 //      ^^
         };
       };
@@ -20,7 +20,7 @@ if (false) { // Compliant
   if (true) { // Compliant
   } else {
     if (false) { // Compliant
-      if (true) { // Noncompliant {{Refactor this code to not nest more than 3 control flow statements.}}
+      if (true) { // Noncompliant {{重构此代码使得其控制流语句嵌套的深度不会超过3。}}
         if (false) { // Compliant
         };
       } else if (true) { // Compliant

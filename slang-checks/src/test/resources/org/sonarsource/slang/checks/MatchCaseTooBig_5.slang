@@ -1,5 +1,5 @@
 match (x) {
-    expression -> { // Noncompliant {{Reduce this case clause number of lines from 8 to at most 5, for example by extracting code into methods.}}
+    expression -> { // Noncompliant {{将此case子句的行数从 8 减少到最多 5， 例如，通过将代码提取到方法中。}}
  // ^^^^^^^^^^^^^
         a = 1;
         foo();

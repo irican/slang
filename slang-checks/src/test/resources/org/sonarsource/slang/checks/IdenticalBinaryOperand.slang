@@ -1,6 +1,6 @@
   x == 1;
-  1 == 1; // Noncompliant {{Correct one of the identical sub-expressions on both sides this operator}}
-  1 == (1); // Noncompliant {{Correct one of the identical sub-expressions on both sides this operator}}
+  1 == 1; // Noncompliant {{纠正这个运算符两边的相同子表达式其中的一个}}
+  1 == (1); // Noncompliant {{纠正这个运算符两边的相同子表达式其中的一个}}
   (1 + 2) == 1 + 2; // Noncompliant
   (1 + 2) == ((1 + 2)); // Noncompliant
   (1 + 2) == ((1 + 2 + 3));

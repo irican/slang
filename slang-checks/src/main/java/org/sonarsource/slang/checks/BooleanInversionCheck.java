@@ -55,7 +55,7 @@ public class BooleanInversionCheck implements SlangCheck {
         BinaryExpressionTree binaryExpression = (BinaryExpressionTree) innerExpression;
         String oppositeOperator = OPERATORS.get(binaryExpression.operator());
         if (oppositeOperator != null) {
-          String message = String.format("Use the opposite operator (\"%s\") instead.", oppositeOperator);
+          String message = String.format("请使用相反的运算符 （\"%s\"）。", oppositeOperator);
           ctx.reportIssue(tree, message);
         }
       }

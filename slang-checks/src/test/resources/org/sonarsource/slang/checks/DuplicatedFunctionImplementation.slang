@@ -24,14 +24,14 @@ int fun f2() {
   baz = foo > 3 || bar
 }
 
-boolean fun f3() { // Noncompliant {{Update this function so that its implementation is not identical to "f1" on line 14.}}
+boolean fun f3() { // Noncompliant {{更新此函数使得它的实现不与 "f1" 相同，后者位于 14 行。}}
 //          ^^
   foobar = "abc";
   foo = 1;
   bar = foo > 3 || bar
 }
 
-fun f4() { // Noncompliant {{Update this function so that its implementation is not identical to "f1" on line 14.}}
+fun f4() { // Noncompliant {{更新此函数使得它的实现不与 "f1" 相同，后者位于 14 行。}}
 //  ^^
   foobar = "abc";
   foo = 1;

@@ -7,4 +7,4 @@ if (cond) {
 
 x = 4;
 x;
-// Noncompliant@0 {{Add or update the header of this file.}}
+// Noncompliant@0 {{添加或更新此文件头。}}

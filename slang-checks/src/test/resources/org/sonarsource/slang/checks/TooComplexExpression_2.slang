@@ -1,3 +1,3 @@
   a && b;
   a && b || c;
-  a && b || c && d; // Noncompliant {{Reduce the number of conditional operators (3) used in the expression (maximum allowed 2).}}
+  a && b || c && d; // Noncompliant {{减少此表达式中条件运算符的数量 （当前为3）  （最大允许数量为2）。}}

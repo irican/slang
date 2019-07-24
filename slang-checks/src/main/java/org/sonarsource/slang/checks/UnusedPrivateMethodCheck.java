@@ -80,7 +80,7 @@ public class UnusedPrivateMethodCheck implements SlangCheck {
         .forEach(tree -> {
           IdentifierTree identifier = tree.name();
           if (isUnusedMethod(identifier, usedUniqueIdentifiers) && !IGNORED_METHODS.contains(identifier.name())) {
-            String message = String.format("Remove this unused private \"%s\" method.", identifier.name());
+            String message = String.format("删除此未使用的private方法 \"%s\" 。", identifier.name());
             ctx.reportIssue(tree.rangeToHighlight(), message);
           }
         });

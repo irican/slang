@@ -41,7 +41,7 @@ public class IdenticalBinaryOperandCheck implements SlangCheck {
         && areEquivalent(skipParentheses(tree.leftOperand()), skipParentheses(tree.rightOperand()))) {
         ctx.reportIssue(
           tree.rightOperand(),
-          "Correct one of the identical sub-expressions on both sides this operator",
+          "纠正这个运算符两边的相同子表达式其中的一个",
           new SecondaryLocation(tree.leftOperand()));
       }
     });

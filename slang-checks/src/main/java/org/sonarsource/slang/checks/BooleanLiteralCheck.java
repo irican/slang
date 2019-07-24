@@ -39,7 +39,7 @@ public class BooleanLiteralCheck implements SlangCheck {
     BinaryExpressionTree.Operator.CONDITIONAL_AND,
     BinaryExpressionTree.Operator.CONDITIONAL_OR);
 
-  private static final String MESSAGE = "Remove the unnecessary Boolean literal.";
+  private static final String MESSAGE = "删除不必要的布尔文字。";
 
   @Override
   public void initialize(InitContext init) {

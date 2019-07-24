@@ -40,7 +40,7 @@ public class TooComplexExpressionCheck implements SlangCheck {
   private static final int DEFAULT_MAX_COMPLEXITY = 3;
 
   @RuleProperty(key = "max",
-    description = "Maximum number of allowed conditional operators in an expression",
+    description = "表达式中允许的最大条件运算符数",
     defaultValue = "" + DEFAULT_MAX_COMPLEXITY)
   public int max = DEFAULT_MAX_COMPLEXITY;
 
@@ -51,7 +51,7 @@ public class TooComplexExpressionCheck implements SlangCheck {
         int complexity = computeExpressionComplexity(tree);
         if (complexity > max) {
           String message = String.format(
-            "Reduce the number of conditional operators (%s) used in the expression (maximum allowed %s).",
+            "减少此表达式中条件运算符的数量 （当前为%s）  （最大允许数量为%s）。",
             complexity,
             max);
           double gap = (double) complexity - max;

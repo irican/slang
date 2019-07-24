@@ -31,11 +31,11 @@ public class MatchCaseTooBigCheck implements SlangCheck {
 
   private static final int DEFAULT_MAX = 15;
   private static final String MESSAGE =
-    "Reduce this case clause number of lines from {0} to at most {1}, for example by extracting code into methods.";
+    "将此case子句的行数从 {0} 减少到最多 {1}， 例如，通过将代码提取到方法中。";
 
   @RuleProperty(
     key = "max",
-    description = "Maximum number of lines",
+    description = "最大行数",
     defaultValue = "" + DEFAULT_MAX)
   public int max = DEFAULT_MAX;
 

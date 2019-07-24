@@ -1,4 +1,4 @@
-// Noncompliant@0 {{File "TooManyLinesOfCodeFile.max_4.slang" has 5 lines, which is greater than 4 authorized. Split it into smaller files.}}
+// Noncompliant@0 {{文件 "TooManyLinesOfCodeFile.max_4.slang" 有5行代码，超过了允许的最大行数4。请将其拆分为较小的文件。}}
 // comment - not a line of code
 
 if (cond) {

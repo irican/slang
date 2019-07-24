@@ -47,7 +47,7 @@ public class HardcodedIpCheck implements SlangCheck {
   private static final Pattern IPV6_LOOPBACK = Pattern.compile("[0:]++0*+1");
   private static final Pattern IPV6_NON_ROUTABLE = Pattern.compile("[0:]++");
 
-  private static final String MESSAGE = "Make sure using this hardcoded IP address is safe here.";
+  private static final String MESSAGE = "确保在此处使用此硬编码的IP地址是安全的。";
 
   @Override
   public void initialize(InitContext init) {

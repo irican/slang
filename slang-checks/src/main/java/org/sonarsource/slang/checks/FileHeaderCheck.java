@@ -32,19 +32,19 @@ import org.sonar.check.RuleProperty;
 @Rule(key = "S1451")
 public class FileHeaderCheck implements SlangCheck {
 
-  private static final String MESSAGE = "Add or update the header of this file.";
+  private static final String MESSAGE = "添加或更新此文件头。";
   private static final String DEFAULT_HEADER_FORMAT = "";
 
   @RuleProperty(
     key = "headerFormat",
-    description = "Expected copyright and license header",
+    description = "预期的版权和许可证文件头",
     defaultValue = DEFAULT_HEADER_FORMAT,
     type = "TEXT")
   public String headerFormat = DEFAULT_HEADER_FORMAT;
 
   @RuleProperty(
     key = "isRegularExpression",
-    description = "Whether the headerFormat is a regular expression",
+    description = "headerFormat 是否为正则表达式",
     defaultValue = "false")
   public boolean isRegularExpression = false;
   private Pattern searchPattern = null;
@@ -69,7 +69,7 @@ public class FileHeaderCheck implements SlangCheck {
       try {
         searchPattern = Pattern.compile(getHeaderFormat(), Pattern.DOTALL);
       } catch (IllegalArgumentException e) {
-        throw new IllegalArgumentException("[" + getClass().getSimpleName() + "] Unable to compile the regular expression: " + headerFormat, e);
+        throw new IllegalArgumentException("[" + getClass().getSimpleName() + "] 无法编译正则表达式： " + headerFormat, e);
       }
     } else {
       expectedLines = headerFormat.split(LINES_REGEX);

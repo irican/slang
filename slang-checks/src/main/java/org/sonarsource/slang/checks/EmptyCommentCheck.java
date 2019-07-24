@@ -32,7 +32,7 @@ public class EmptyCommentCheck implements SlangCheck {
     init.register(TopLevelTree.class, (ctx, tree) ->
       tree.allComments().stream()
         .filter(comment -> comment.contentText().trim().isEmpty() && !comment.contentRange().end().equals(comment.textRange().end()))
-        .forEach(comment -> ctx.reportIssue(comment, "Remove this comment, it is empty.")));
+        .forEach(comment -> ctx.reportIssue(comment, "删除此空注释。")));
   }
 
 }

@@ -34,7 +34,7 @@ public class BadClassNameCheck implements SlangCheck {
 
   @RuleProperty(
     key = "format",
-    description = "Regular expression used to check the class names against.",
+    description = "用于检查类名的正则表达式。",
     defaultValue = DEFAULT_FORMAT)
   public String format = DEFAULT_FORMAT;
 
@@ -45,7 +45,7 @@ public class BadClassNameCheck implements SlangCheck {
       IdentifierTree identifier = tree.identifier();
       if (identifier != null && !pattern.matcher(identifier.name()).matches()) {
         String message = String.format(
-          "Rename class \"%s\" to match the regular expression %s.",
+          "重命名类 \"%s\" 使其符合正则表达式 %s。",
           identifier.name(), format);
         ctx.reportIssue(identifier, message);
       }

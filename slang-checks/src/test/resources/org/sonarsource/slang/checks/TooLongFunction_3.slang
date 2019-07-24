@@ -2,7 +2,7 @@ fun f1() {
   a; a;
 }
 
-fun f1() { // Noncompliant {{This function has 4 lines of code, which is greater than the 3 authorized. Split it into smaller functions.}}
+fun f1() { // Noncompliant {{此函数有4行代码，超过了允许的最大行数3。请将其拆分为更小的函数。}}
 //  ^^
   a;
   a;

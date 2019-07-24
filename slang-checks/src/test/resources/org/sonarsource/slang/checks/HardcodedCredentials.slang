@@ -6,16 +6,16 @@ x = "login=a&password=";
 "login=a&password=";
 "login=a&password= " + value;
 "login=a&password=a"; // Noncompliant
-x = "login=a&password=xxx"; // Noncompliant {{"password" detected in this expression, review this potentially hardcoded credential.}}
+x = "login=a&password=xxx"; // Noncompliant {{"password" 在此表达式中被检测到， 请检查这个潜在的硬编码凭证。}}
 //  ^^^^^^^^^^^^^^^^^^^^^^
 "login=a&password=xxx"; // Noncompliant
-"login=a&passwd=xxx"; // Noncompliant {{"passwd" detected in this expression, review this potentially hardcoded credential.}}
-"login=a&pwd=xxx"; // Noncompliant {{"pwd" detected in this expression, review this potentially hardcoded credential.}}
-  variableNameWithPasswordInIt = "xxx"; // Noncompliant {{"Password" detected in this expression, review this potentially hardcoded credential.}}
+"login=a&passwd=xxx"; // Noncompliant {{"passwd" 在此表达式中被检测到， 请检查这个潜在的硬编码凭证。}}
+"login=a&pwd=xxx"; // Noncompliant {{"pwd" 在此表达式中被检测到， 请检查这个潜在的硬编码凭证。}}
+  variableNameWithPasswordInIt = "xxx"; // Noncompliant {{"Password" 在此表达式中被检测到， 请检查这个潜在的硬编码凭证。}}
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 variableNameWithPasswdInIt = "xxx"; // Noncompliant
 variableNameWithPasswdInIt += "xxx"; // Noncompliant
-variableNameWithPwdInIt = "xxx";  // Noncompliant {{"Pwd" detected in this expression, review this potentially hardcoded credential.}}
+variableNameWithPwdInIt = "xxx";  // Noncompliant {{"Pwd" 在此表达式中被检测到， 请检查这个潜在的硬编码凭证。}}
 otherVariableNameWithPasswordInIt;
 variableNameWithPasswordInIt = native[] { [ "NativeFunctionCall" ] };
 val constValue = "login=a&password=xxx"; // Noncompliant

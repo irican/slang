@@ -42,7 +42,7 @@ import static org.sonarsource.slang.checks.utils.ExpressionUtils.skipParentheses
 @Rule(key = "S1145")
 public class IfConditionalAlwaysTrueOrFalseCheck implements SlangCheck {
 
-  public static final String MESSAGE_TEMPLATE = "Remove this useless \"%s\" statement.";
+  public static final String MESSAGE_TEMPLATE = "删除无用的 \"%s\" 语句。";
 
   @Override
   public void initialize(InitContext init) {

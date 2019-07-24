@@ -1,4 +1,4 @@
-x = "string literal1";                           // Noncompliant {{Define a constant instead of duplicating this literal "string literal1" 3 times.}} [[effortToFix=2]]
+x = "string literal1";                           // Noncompliant {{定义常量而不是复制文本 "string literal1" 3 次。}} [[effortToFix=2]]
 //  ^^^^^^^^^^^^^^^^^
 x += "string literal1" + "other string literal";
 //  <^^^^^^^^^^^^^^^^^
@@ -16,7 +16,7 @@ void fun function1(string abcde) {
 "string literal3${x}";                          // Compliant - string entries of string templates not considered as string literals
 
 void fun funtcion2(int abcde) {
-  if (abcde == "string literal4") {             // Noncompliant {{Define a constant instead of duplicating this literal "string literal4" 5 times.}} [[effortToFix=4]]
+  if (abcde == "string literal4") {             // Noncompliant {{定义常量而不是复制文本 "string literal4" 5 次。}} [[effortToFix=4]]
 //             ^^^^^^^^^^^^^^^^^
   }
 }

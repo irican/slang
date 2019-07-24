@@ -1,5 +1,5 @@
 match (x) {
-    1 -> { // Noncompliant {{Reduce this case clause number of lines from 4 to at most 3, for example by extracting code into methods.}}
+    1 -> { // Noncompliant {{将此case子句的行数从 4 减少到最多 3， 例如，通过将代码提取到方法中。}}
 //  ^^^^
         a = 1;
         print(a);
@@ -9,7 +9,7 @@ match (x) {
 
 match (x) {
     1 -> foo();
-    else -> { // Noncompliant {{Reduce this case clause number of lines from 4 to at most 3, for example by extracting code into methods.}}
+    else -> { // Noncompliant {{将此case子句的行数从 4 减少到最多 3， 例如，通过将代码提取到方法中。}}
 //  ^^^^^^^
         a = 1;
         print(a);

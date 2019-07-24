@@ -39,7 +39,7 @@ public class VariableAndParameterNameCheck implements SlangCheck {
 
   @RuleProperty(
     key = "format",
-    description = "Regular expression used to check the names against."
+    description = "用于检查名称的正则表达式。"
   )
   @PropertyDefaultValue(language = Language.KOTLIN, defaultValue = DEFAULT_FORMAT)
   @PropertyDefaultValue(language = Language.RUBY, defaultValue = Language.RUBY_NAMING_DEFAULT)
@@ -52,7 +52,7 @@ public class VariableAndParameterNameCheck implements SlangCheck {
 
     init.register(VariableDeclarationTree.class, (ctx, tree) -> {
       if (ctx.ancestors().stream().anyMatch(FunctionDeclarationTree.class::isInstance)) {
-        check(pattern, ctx, tree.identifier(), "local variable");
+        check(pattern, ctx, tree.identifier(), "局部变量");
       }
     });
 
@@ -61,12 +61,12 @@ public class VariableAndParameterNameCheck implements SlangCheck {
         .filter(ParameterTree.class::isInstance)
         .map(ParameterTree.class::cast)
         .forEach(
-        param -> check(pattern, ctx, param.identifier(), "parameter")));
+        param -> check(pattern, ctx, param.identifier(), "参数")));
   }
 
   private void check(Pattern pattern, CheckContext ctx, IdentifierTree identifier, String variableKind) {
     if (!pattern.matcher(identifier.name()).matches()) {
-      String message = String.format("Rename this %s to match the regular expression \"%s\".", variableKind, this.format);
+      String message = String.format("重命名此%s使其符合正则表达式 \"%s\"。", variableKind, this.format);
       ctx.reportIssue(identifier, message);
     }
   }

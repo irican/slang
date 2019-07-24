@@ -33,7 +33,7 @@ public class SelfAssignmentCheck implements SlangCheck {
   public void initialize(InitContext init) {
     init.register(AssignmentExpressionTree.class, (ctx, tree) -> {
       if (tree.operator() == AssignmentExpressionTree.Operator.EQUAL && areEquivalent(tree.leftHandSide(), tree.statementOrExpression())) {
-        ctx.reportIssue(tree, "Remove or correct this useless self-assignment.");
+        ctx.reportIssue(tree, "删除或纠正这种无用的自我赋值。");
       }
     });
   }

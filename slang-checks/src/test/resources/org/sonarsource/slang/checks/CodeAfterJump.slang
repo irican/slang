@@ -1,5 +1,5 @@
 fun testReturn() {
-  return 42; // Noncompliant {{Refactor this piece of code to not have any dead code after this "return".}}
+  return 42; // Noncompliant {{重构这段代码，使得在此 "return" 之后没有任何死代码。}}
 //^^^^^^^^^
   42;
 }
@@ -11,7 +11,7 @@ fun lastReturn() {
 
 fun testBreak() {
   while (cond) {
-    break; // Noncompliant {{Refactor this piece of code to not have any dead code after this "break".}}
+    break; // Noncompliant {{重构这段代码，使得在此 "break" 之后没有任何死代码。}}
 //  ^^^^^
     42;
     42;
@@ -20,7 +20,7 @@ fun testBreak() {
 
 fun testContinue() {
   while (cond) {
-    continue; // Noncompliant {{Refactor this piece of code to not have any dead code after this "continue".}}
+    continue; // Noncompliant {{重构这段代码，使得在此 "continue" 之后没有任何死代码。}}
 //  ^^^^^^^^
     42;
   }
@@ -28,7 +28,7 @@ fun testContinue() {
 
 fun testContinueWithLabel() {
   while (cond) {
-    continue myLabel; // Noncompliant {{Refactor this piece of code to not have any dead code after this "continue".}}
+    continue myLabel; // Noncompliant {{重构这段代码，使得在此 "continue" 之后没有任何死代码。}}
 //  ^^^^^^^^^^^^^^^^
     42;
   }
@@ -48,6 +48,6 @@ fun fnRequiresCfg() {
 }
 
 fun testThrow() {
-  throw 42; // Noncompliant {{Refactor this piece of code to not have any dead code after this "throw".}}
+  throw 42; // Noncompliant {{重构这段代码，使得在此 "throw" 之后没有任何死代码。}}
   42;
 }

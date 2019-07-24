@@ -1,4 +1,4 @@
-if (true) { // Noncompliant {{Remove this useless "if" statement.}}
+if (true) { // Noncompliant {{删除无用的 "if" 语句。}}
 //  ^^^^
   return 1
 };

@@ -34,7 +34,7 @@ import org.sonarsource.slang.checks.api.SlangCheck;
 
 @Rule(key = "S1763")
 public class CodeAfterJumpCheck implements SlangCheck {
-  private static final String MESSAGE = "Refactor this piece of code to not have any dead code after this \"%s\".";
+  private static final String MESSAGE = "重构这段代码，使得在此 \"%s\" 之后没有任何死代码。";
 
   @Override
   public void initialize(InitContext init) {

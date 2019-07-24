@@ -2,12 +2,12 @@ var NOT_LOCAL;
 
 fun localVariables() {
   var localVar;
-  var INVALID_LOCAL; // Noncompliant {{Rename this local variable to match the regular expression "^[_a-z][a-zA-Z0-9]*$".}}
+  var INVALID_LOCAL; // Noncompliant {{重命名此局部变量使其符合正则表达式 "^[_a-z][a-zA-Z0-9]*$"。}}
 //    ^^^^^^^^^^^^^
   var invalid_local; // Noncompliant
 }
 
-fun parameters(param1, PARAM2, param3) { // Noncompliant {{Rename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".}}
+fun parameters(param1, PARAM2, param3) { // Noncompliant {{重命名此参数使其符合正则表达式 "^[_a-z][a-zA-Z0-9]*$"。}}
 //                     ^^^^^^
 }
 

@@ -43,7 +43,7 @@ public class HardcodedCredentialsCheck implements SlangCheck {
 
   @RuleProperty(
     key = "credentialWords",
-    description = "Comma separated list of words identifying potential credentials",
+    description = "逗号分隔的单词列表，用于识别潜在凭证",
     defaultValue = DEFAULT_VALUE)
   public String credentialWords = DEFAULT_VALUE;
 
@@ -76,7 +76,7 @@ public class HardcodedCredentialsCheck implements SlangCheck {
   }
 
   private static void report(CheckContext ctx, Tree tree, String matchName) {
-    String message = String.format("\"%s\" detected in this expression, review this potentially hardcoded credential.", matchName);
+    String message = String.format("\"%s\" 在此表达式中被检测到， 请检查这个潜在的硬编码凭证。", matchName);
     ctx.reportIssue(tree, message);
   }
 

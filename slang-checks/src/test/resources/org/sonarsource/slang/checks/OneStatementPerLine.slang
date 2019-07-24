@@ -1,4 +1,4 @@
-print("Hello World!"); print("Hello World!"); //Noncompliant {{Reformat the code to have only one statement per line.}}
+print("Hello World!"); print("Hello World!"); //Noncompliant {{重整此代码的格式，使得每行只有一个语句。}}
 
 if (a) {}; if (b) {}; // Noncompliant
 //         ^^^^^^^^^

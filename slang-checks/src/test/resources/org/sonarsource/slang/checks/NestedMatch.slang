@@ -2,7 +2,7 @@ match (x) { 1 -> a; else -> b; }; // OK
 
 match (x) {
     1 -> a;
-    2 -> match (y) { // Noncompliant {{Refactor the code to eliminate this nested "match".}}
+    2 -> match (y) { // Noncompliant {{重构代码以消除此嵌套的 "match"。}}
     //   ^^^^^
       3 -> c;
       else -> d;
@@ -13,11 +13,11 @@ match (x) {
 match (x) {
     1 -> a;
     2 -> {
-      match (y) { // Noncompliant {{Refactor the code to eliminate this nested "match".}}
+      match (y) { // Noncompliant {{重构代码以消除此嵌套的 "match"。}}
           3 -> c;
           else -> d;
        };
-       match (z) { // Noncompliant {{Refactor the code to eliminate this nested "match".}}
+       match (z) { // Noncompliant {{重构代码以消除此嵌套的 "match"。}}
           3 -> c;
           else -> d;
        };
@@ -27,9 +27,9 @@ match (x) {
 
 match (x) {
     1 -> a;
-    2 -> match (y) { // Noncompliant {{Refactor the code to eliminate this nested "match".}}
+    2 -> match (y) { // Noncompliant {{重构代码以消除此嵌套的 "match"。}}
       3 -> c;
-      else -> match (z) { // Noncompliant {{Refactor the code to eliminate this nested "match".}}
+      else -> match (z) { // Noncompliant {{重构代码以消除此嵌套的 "match"。}}
         4 -> d;
         else -> e;
       };
@@ -40,7 +40,7 @@ match (x) {
 match (x) {
     1 -> a;
     2 -> b;
-    else -> match (y) { // Noncompliant {{Refactor the code to eliminate this nested "match".}}
+    else -> match (y) { // Noncompliant {{重构代码以消除此嵌套的 "match"。}}
       3 -> c;
       else -> d;
     };

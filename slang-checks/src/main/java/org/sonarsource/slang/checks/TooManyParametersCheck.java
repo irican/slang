@@ -36,7 +36,7 @@ public class TooManyParametersCheck implements SlangCheck {
 
   @RuleProperty(
     key = "Max",
-    description = "Maximum authorized number of parameters",
+    description = "允许的最大参数数量",
     defaultValue = "" + DEFAULT_MAX
   )
   public int max = DEFAULT_MAX;
@@ -46,7 +46,7 @@ public class TooManyParametersCheck implements SlangCheck {
     init.register(FunctionDeclarationTree.class, (ctx, tree) -> {
       if (!tree.isConstructor() && !isOverrideMethod(tree) &&  tree.formalParameters().size() > max) {
         String message = String.format(
-          "This function has %s parameters, which is greater than the %s authorized.",
+          "此函数有%s个参数， 超过了允许的最大数量%s。",
           tree.formalParameters().size(),
           max);
         List<SecondaryLocation> secondaryLocations = tree.formalParameters().stream()

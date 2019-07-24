@@ -33,7 +33,7 @@ public class RedundantParenthesesCheck implements SlangCheck {
     init.register(ParenthesizedExpressionTree.class, (ctx, tree) -> {
       if (ctx.parent() instanceof ParenthesizedExpressionTree) {
         SecondaryLocation secondaryLocation = new SecondaryLocation(tree.rightParenthesis().textRange(), null);
-        ctx.reportIssue(tree.leftParenthesis(), "Remove these useless parentheses.", secondaryLocation);
+        ctx.reportIssue(tree.leftParenthesis(), "删除这些无用的括号。", secondaryLocation);
       }
     });
   }

@@ -40,7 +40,7 @@ public class CommentedCodeCheck implements SlangCheck {
     this.codeVerifier = codeVerifier;
   }
 
-  private static final String MESSAGE = "Remove this commented out code.";
+  private static final String MESSAGE = "删除此处被注释掉的代码。";
 
   @Override
   public void initialize(InitContext init) {

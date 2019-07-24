@@ -36,7 +36,7 @@ public class TooManyCasesCheck implements SlangCheck {
 
   @RuleProperty(
     key = "maximum",
-    description = "Maximum number of branches",
+    description = "最大分支数",
     defaultValue = "" + DEFAULT_MAX)
   public int maximum = DEFAULT_MAX;
 
@@ -47,7 +47,7 @@ public class TooManyCasesCheck implements SlangCheck {
       if (numberOfCases > maximum) {
         Token matchKeyword = tree.keyword();
         String message = String.format(
-          "Reduce the number of %s branches from %s to at most %s.",
+          "将%s的分支数从%s减少到不超过%s。",
           matchKeyword.text(),
           numberOfCases,
           maximum);

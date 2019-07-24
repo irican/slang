@@ -76,7 +76,7 @@ public class IdenticalConditionsCheck implements SlangCheck {
           TextRange originalRange = original.metaData().textRange();
           ctx.reportIssue(
             duplicated,
-            "This condition duplicates the one on line " + originalRange.start().line() + ".",
+            "此条件与位于" + originalRange.start().line() + "行的重复。",
             new SecondaryLocation(originalRange, "Original"));
         });
     }

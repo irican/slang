@@ -32,7 +32,7 @@ import org.sonar.check.Rule;
 
 @Rule(key = "S122")
 public class OneStatementPerLineCheck implements SlangCheck {
-  private static final String MESSAGE = "Reformat the code to have only one statement per line.";
+  private static final String MESSAGE = "重整此代码的格式，使得每行只有一个语句。";
 
   @Override
   public void initialize(InitContext init) {

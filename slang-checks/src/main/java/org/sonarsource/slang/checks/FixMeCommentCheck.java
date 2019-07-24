@@ -49,7 +49,7 @@ public class FixMeCommentCheck implements SlangCheck {
         TextRange fixMeRange = new TextRangeImpl(
           new TextPointerImpl(location.endLine(), location.endLineOffset()),
           new TextPointerImpl(location.endLine(), location.endLineOffset() + 5));
-        ctx.reportIssue(fixMeRange, "Take the required action to fix the issue indicated by this \"FIXME\" comment.");
+        ctx.reportIssue(fixMeRange, "采取必要的措施来解决此 \"FIXME\" 注释指示的问题。");
       }
     }));
   }

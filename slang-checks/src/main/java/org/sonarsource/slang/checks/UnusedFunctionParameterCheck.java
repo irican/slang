@@ -63,16 +63,16 @@ public class UnusedFunctionParameterCheck implements SlangCheck {
 
       List<SecondaryLocation> secondaryLocations = unusedParameters.stream()
           .map(unusedParameter ->
-              new SecondaryLocation(unusedParameter.identifier(), "Remove this unused method parameter " + unusedParameter.identifier().name() + "\"."))
+              new SecondaryLocation(unusedParameter.identifier(), "删除此未使用的方法参数 \"" + unusedParameter.identifier().name() + "\"。"))
           .collect(Collectors.toList());
 
       IdentifierTree firstUnused = unusedParameters.get(0).identifier();
       String msg;
 
       if (unusedParameters.size() > 1) {
-        msg = "Remove these unused function parameters.";
+        msg = "删除这些未使用的函数参数。";
       } else {
-        msg = "Remove this unused function parameter \"" + firstUnused.name() + "\".";
+        msg = "删除此未使用的函数参数 \"" + firstUnused.name() + "\"。";
       }
 
       ctx.reportIssue(firstUnused, msg, secondaryLocations);

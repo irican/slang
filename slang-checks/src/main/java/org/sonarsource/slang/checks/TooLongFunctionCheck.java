@@ -32,7 +32,7 @@ public class TooLongFunctionCheck implements SlangCheck {
 
   @RuleProperty(
     key = "max",
-    description = "Maximum authorized lines of code in a function",
+    description = "一个函数中允许的最大代码行数",
     defaultValue = "" + DEFAULT_MAX
   )
   public int max = DEFAULT_MAX;
@@ -43,7 +43,7 @@ public class TooLongFunctionCheck implements SlangCheck {
       int numberOfLinesOfCode = tree.metaData().linesOfCode().size();
       if (numberOfLinesOfCode > max) {
         String message = String.format(
-          "This function has %s lines of code, which is greater than the %s authorized. Split it into smaller functions.",
+          "此函数有%s行代码，超过了允许的最大行数%s。请将其拆分为更小的函数。",
           numberOfLinesOfCode,
           max);
         ctx.reportIssue(tree.rangeToHighlight(), message);

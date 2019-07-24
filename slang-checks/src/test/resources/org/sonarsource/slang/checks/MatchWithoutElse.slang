@@ -1,6 +1,6 @@
-  match (x) { }; // Noncompliant {{Add a default clause to this "match" statement.}}
+  match (x) { }; // Noncompliant {{在此 "match" 语句中加入一个默认（default）子句。}}
 //^^^^^
-  match (x) { 1 -> 1; }; // Noncompliant {{Add a default clause to this "match" statement.}}
+  match (x) { 1 -> 1; }; // Noncompliant {{在此 "match" 语句中加入一个默认（default）子句。}}
   match (x) { 1 -> 1; else -> 2; };
   match (x) { else -> 2; 1 -> 1; };
 

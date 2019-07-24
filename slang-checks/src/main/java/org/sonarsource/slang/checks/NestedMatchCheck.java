@@ -27,7 +27,7 @@ import org.sonar.check.Rule;
 
 @Rule(key = "S1821")
 public class NestedMatchCheck implements SlangCheck {
-  private static final String MESSAGE = "Refactor the code to eliminate this nested \"{0}\".";
+  private static final String MESSAGE = "重构代码以消除此嵌套的 \"{0}\"。";
 
   @Override
   public void initialize(InitContext init) {

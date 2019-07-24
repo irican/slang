@@ -43,7 +43,7 @@ public class StringLiteralDuplicatedCheck implements SlangCheck {
 
   @RuleProperty(
     key = "threshold",
-    description = "Number of times a literal must be duplicated to trigger an issue",
+    description = "触发此问题的必要文本重复次数",
     defaultValue = "" + DEFAULT_THRESHOLD)
   public int threshold = DEFAULT_THRESHOLD;
 
@@ -66,7 +66,7 @@ public class StringLiteralDuplicatedCheck implements SlangCheck {
       int size = occurrences.size();
       if (size >= threshold) {
         StringLiteralTree first = occurrences.get(0);
-        String message = String.format("Define a constant instead of duplicating this literal \"%s\" %s times.", first.content(), size);
+        String message = String.format("定义常量而不是复制文本 \"%s\" %s 次。", first.content(), size);
         List<SecondaryLocation> secondaryLocations = occurrences.stream()
           .skip(1)
           .map(stringLiteral -> new SecondaryLocation(stringLiteral.metaData().textRange(), "Duplication"))

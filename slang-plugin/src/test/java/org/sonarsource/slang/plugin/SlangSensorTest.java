@@ -74,7 +74,7 @@ public class SlangSensorTest extends AbstractSensorTest {
     assertThat(issue.ruleKey().rule()).isEqualTo("S1764");
     IssueLocation location = issue.primaryLocation();
     assertThat(location.inputComponent()).isEqualTo(inputFile);
-    assertThat(location.message()).isEqualTo("Correct one of the identical sub-expressions on both sides this operator");
+    assertThat(location.message()).isEqualTo("纠正这个运算符两边的相同子表达式其中的一个");
     assertTextRange(location.textRange()).hasRange(2, 12, 2, 13);
   }
 
@@ -91,7 +91,7 @@ public class SlangSensorTest extends AbstractSensorTest {
     assertThat(issue.ruleKey().rule()).isEqualTo("S1192");
     IssueLocation location = issue.primaryLocation();
     assertThat(location.inputComponent()).isEqualTo(inputFile);
-    assertThat(location.message()).isEqualTo("Define a constant instead of duplicating this literal \"string literal\" 3 times.");
+    assertThat(location.message()).isEqualTo("定义常量而不是复制文本 \"string literal\" 3 次。");
     assertTextRange(location.textRange()).hasRange(1, 16, 1, 32);
     assertThat(issue.gap()).isEqualTo(2.0);
   }
@@ -119,7 +119,7 @@ public class SlangSensorTest extends AbstractSensorTest {
     assertThat(issue.ruleKey().rule()).isEqualTo("S125");
     IssueLocation location = issue.primaryLocation();
     assertThat(location.inputComponent()).isEqualTo(inputFile);
-    assertThat(location.message()).isEqualTo("Remove this commented out code.");
+    assertThat(location.message()).isEqualTo("删除此处被注释掉的代码。");
   }
 
   @Test

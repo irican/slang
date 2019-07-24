@@ -36,11 +36,11 @@ public class TooLongLineCheck implements SlangCheck {
 
   @RuleProperty(
     key = "maximumLineLength",
-    description = "The maximum authorized line length.",
+    description = "允许的最大行长度。",
     defaultValue = "" + DEFAULT_MAXIMUM_LINE_LENGTH)
   int maximumLineLength = DEFAULT_MAXIMUM_LINE_LENGTH;
 
-  private static final String MESSAGE = "Split this {0} characters long line (which is greater than {1} authorized).";
+  private static final String MESSAGE = "拆分此拥有{0}字符的代码行（超过了允许的字符数{1}）。";
 
   @Override
   public void initialize(InitContext init) {

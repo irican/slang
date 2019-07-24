@@ -1,4 +1,4 @@
-// Noncompliant@+2 {{Remove this commented out code.}}
+// Noncompliant@+2 {{删除此处被注释掉的代码。}}
 foo();
 // if(a) { print(b); };
 foo();

@@ -36,7 +36,7 @@ public class BadFunctionNameCheck implements SlangCheck {
 
   @RuleProperty(
     key = "format",
-    description = "Regular expression used to check the function names against."
+    description = "用于检查函数名称的正则表达式。"
   )
   @PropertyDefaultValue(language = Language.KOTLIN, defaultValue = DEFAULT_FORMAT)
   @PropertyDefaultValue(language = Language.RUBY, defaultValue = Language.RUBY_NAMING_DEFAULT)
@@ -44,7 +44,7 @@ public class BadFunctionNameCheck implements SlangCheck {
   public String format = DEFAULT_FORMAT;
 
   private String message(String name) {
-    return "Rename function \"" + name + "\" to match the regular expression " + format;
+    return "重命名函数 \"" + name + "\" 使其符合正则表达式 " + format;
   }
 
   @Override
